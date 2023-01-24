@@ -36,7 +36,7 @@ app.post("/players",(req,res) => {
     let newPlayer = {
         id:uuidv4(),
         name:req.body.name,
-        country:req.body.country
+        distric:req.body.distric
     }
     client.insert(newPlayer,(err,data) => {
         if(!err){
@@ -51,7 +51,7 @@ app.put("/players/:id",(req,res) => {
     let updatedPlayer = {
         id:req.params.id,
         name:req.body.name,
-        country:req.body.country
+        distric:req.body.distric
     }
     client.update(updatedPlayer,(err,data) => {
         if(!err){

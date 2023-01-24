@@ -13,7 +13,7 @@ message Empty{}
 message Player{
     string id = 1;
     string name = 2;
-    string country = 3;
+    string distric = 3;
 }
 
 message PlayerList{

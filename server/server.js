@@ -17,18 +17,18 @@ const server = new grpc.Server()
 const players = [
     {
         id:'a68b823c-7ca6-44bc-b721-fb4d5312cafc',
-        name:'Virat Kohli',
-        country:'India'
+        name:'Elankumaran Sivasubramaniam',
+        distric:'Jaffna'
     },
     {
         id:'a68b823c-7ca6-44bc-b721-fb4d5312cnhu',
-        name:'MS Dhoni',
-        country:'India'
+        name:'Kanakathurai Tharsan',
+        distric:'Jaffna'
     },
     {
         id:'a68b823c-7ca6-87yh-b721-fb4d5312cafc',
-        name:'Kumar Sangakkara',
-        country:'Sri Lanka'
+        name:'Balachchandran Thinusan',
+        distric:'Jaffna'
     }
 ]
 
@@ -59,7 +59,7 @@ server.addService(playersProto.PlayerService.service,{
         let player = players.find(n => n.id == call.request.id)
         if(player){
             player.name = call.request.name,
-            player.country = call.request.country
+            player.distric = call.request.distric
             callback(null, player)
         } else {
             callback({
